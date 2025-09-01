@@ -9,10 +9,11 @@ const { Client, GatewayIntentBits } = require("discord.js");
 const app = express();
 
 // Discord OAuth2 info
-const CLIENT_ID = "1411025062680854588";
-const CLIENT_SECRET = "r5WKWVJYnOFIzNzo3zw9H7PRGUbbJkTi";
-const CALLBACK_URL = "http://localhost:3000/callback";
-const BOT_TOKEN = "MTQxMTAyNTA2MjY4MDg1NDU4OA.G4CRaz.ptvypczT4PBc_N3fKn_3PgrPmqZx929yCBh43w"; // Put your bot token
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const CALLBACK_URL = process.env.CALLBACK_URL;
+const BOT_TOKEN = process.env.BOT_TOKEN;
+
 
 // Initialize Discord bot client
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -97,3 +98,4 @@ app.get("/logout", (req, res) => {
 
 // Start server
 app.listen(3000, () => console.log("Server running at http://localhost:3000"));
+
