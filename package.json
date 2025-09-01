@@ -1,0 +1,19 @@
+{
+  "name": "ticket-logger-dashboard",
+  "version": "1.0.0",
+  "description": "Ticket Logger Bot Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0",
+    "express": "^4.21.2",
+    "express-session": "^1.18.2",
+    "passport": "^0.6.0",
+    "passport-discord": "^0.1.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Ticket Logger</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c2f33;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .server {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    .server img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+    }
+    .server h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤖 Ticket Logger Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <h2>Your Servers</h2>
+    <div id="servers">Loading...</div>
+  </div>
+
+  <!-- This will be replaced by server.js -->
+  <script>
+    window.servers = undefined;
+  </script>
+
+  <script>
+    const container = document.getElementById("servers");
+
+    if (!window.servers || window.servers.length === 0) {
+      container.innerHTML = "<p>No servers available.</p>";
+    } else {
+      container.innerHTML = window.servers
+        .map(
+          s => `<div class="server">
+                   <img src="${s.iconURL}" alt="${s.name}" />
+                   <h3>${s.name}</h3>
+                 </div>`
+        )
+        .join("");
+    }
+  </script>
+</body>
+</html>
